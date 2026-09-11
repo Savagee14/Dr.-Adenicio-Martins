@@ -1932,6 +1932,10 @@ section {
     min-height: auto;
   }
 
+  .tag-badge {
+    display: none;
+  }
+
   .hero-title {
     font-size: 2rem;
     line-height: 1.25;
