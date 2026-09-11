@@ -1903,7 +1903,7 @@ section {
 }
 
 /* ==========================================================================
-   MOBILE DEDICATED OPTIMIZATIONS (< 768px & < 480px)
+   MOBILE DEDICATED OPTIMIZATIONS (< 768px)
    ========================================================================== */
 @media (max-width: 767px) {
   :root {
@@ -1912,11 +1912,12 @@ section {
 
   html, body {
     overflow-x: hidden;
+    width: 100%;
   }
 
   .container {
-    padding-left: 18px;
-    padding-right: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   /* Header & Logo */
@@ -1932,9 +1933,10 @@ section {
   }
 
   .hero-title {
-    font-size: 2.1rem;
-    line-height: 1.2;
+    font-size: 2rem;
+    line-height: 1.25;
     margin-bottom: 16px;
+    word-break: break-word;
   }
 
   .hero-desc {
@@ -1943,67 +1945,80 @@ section {
     margin-bottom: 24px;
   }
 
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
   .hero-image-frame img {
-    height: 360px;
+    height: 380px;
   }
 
   .hero-image-card {
-    left: 12px;
-    right: 12px;
-    bottom: 14px;
-    padding: 12px 14px;
-    gap: 12px;
-  }
-
-  .hero-image-badge-icon {
-    width: 38px;
-    height: 38px;
-  }
-
-  .hero-badge-title {
-    font-size: 0.85rem;
-  }
-
-  .hero-trust-bar {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    padding-top: 20px;
-  }
-
-  .trust-number {
-    font-size: 1.25rem;
-  }
-
-  .trust-label {
-    font-size: 0.72rem;
-  }
-
-  /* Proof & Stats */
-  .proof-section {
-    padding: 36px 0;
-  }
-
-  .proof-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-  }
-
-  .proof-card {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
     padding: 16px;
     gap: 12px;
   }
 
-  .proof-card-icon {
+  .hero-image-badge-icon {
     width: 40px;
     height: 40px;
   }
 
+  .hero-badge-title {
+    font-size: 0.9rem;
+  }
+
+  /* Fix the squished 3-column layout on mobile */
+  .hero-trust-bar {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding-top: 24px;
+  }
+
+  .trust-item {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .trust-number {
+    font-size: 1.4rem;
+    min-width: 60px;
+  }
+
+  .trust-label {
+    font-size: 0.85rem;
+  }
+
+  /* Proof & Stats - Fix squished 2-column layout */
+  .proof-section {
+    padding: 40px 0;
+  }
+
+  .proof-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .proof-card {
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .proof-card-icon {
+    width: 44px;
+    height: 44px;
+  }
+
   .proof-number {
-    font-size: 1.35rem;
+    font-size: 1.5rem;
   }
 
   .proof-label {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 
   /* Section Spacing */
@@ -2014,7 +2029,8 @@ section {
 
   .section-title {
     font-size: 1.85rem;
-    line-height: 1.25;
+    line-height: 1.3;
+    word-break: break-word;
   }
 
   .section-subtitle {
@@ -2023,41 +2039,56 @@ section {
 
   /* Simulator */
   .simulator-box {
-    padding: 24px 18px;
+    padding: 24px 20px;
   }
 
   .sim-option-btn {
     padding: 14px 16px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 
   .sim-result-card {
-    padding: 20px 18px;
+    padding: 24px 20px;
   }
 
   /* About section */
   .about-image-frame img {
-    height: 360px;
+    height: 380px;
   }
 
   .about-title {
-    font-size: 1.9rem;
+    font-size: 2rem;
+  }
+
+  .highlight-item {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    align-items: center;
   }
 
   /* Contact & Form */
+  .contact-grid {
+    gap: 40px;
+  }
+
   .consultation-form-card {
-    padding: 26px 18px;
+    padding: 28px 20px;
   }
 
   .form-input, .form-select, .form-textarea {
     font-size: 16px; /* Prevents iOS automatic zoom on focus */
-    padding: 12px 14px;
+    padding: 14px 16px;
+  }
+
+  .final-cta-box {
+    padding: 48px 20px;
   }
 
   /* Floating WhatsApp */
   .floating-whatsapp {
     bottom: max(20px, env(safe-area-inset-bottom, 20px));
-    right: 18px;
+    right: 20px;
   }
 
   .floating-whatsapp-btn {
@@ -2068,33 +2099,6 @@ section {
   .floating-whatsapp-btn svg {
     width: 28px;
     height: 28px;
-  }
-}
-
-/* Extra small mobile screens (< 420px) */
-@media (max-width: 420px) {
-  .hero-trust-bar {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .trust-item {
-    flex-direction: row;
-    align-items: baseline;
-    gap: 8px;
-  }
-
-  .proof-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .btn {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .final-cta-box {
-    padding: 40px 18px;
   }
 }
 
