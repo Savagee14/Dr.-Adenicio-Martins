@@ -147,8 +147,11 @@ h1, h2, h3, h4, h5, h6 {
 .text-gold {
   background: var(--gold-gradient);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: inline-block;
+  display: inline;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 .tag-badge {
@@ -1927,7 +1930,7 @@ section {
 
   /* Hero adjustments */
   .hero-section {
-    padding-top: calc(var(--header-height) + 24px);
+    padding-top: calc(var(--header-height) + 48px);
     padding-bottom: 50px;
     min-height: auto;
   }
@@ -1937,10 +1940,12 @@ section {
   }
 
   .hero-title {
-    font-size: 2rem;
-    line-height: 1.25;
-    margin-bottom: 16px;
-    word-break: break-word;
+    font-size: clamp(1.65rem, 5.6vw, 2.05rem);
+    line-height: 1.35;
+    margin-top: 6px;
+    margin-bottom: 18px;
+    word-break: normal;
+    overflow-wrap: break-word;
   }
 
   .hero-desc {
